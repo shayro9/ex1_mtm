@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/shayr/Documents/GitHub/ex1_mtm/RLEList.c
+RLEList.h
+C:/Users/shayr/Documents/GitHub/ex1_mtm/RLEList.h
+stdlib.h
+-
+
+C:/Users/shayr/Documents/GitHub/ex1_mtm/RLEList.h
+stdio.h
+-
+stdbool.h
+-
+

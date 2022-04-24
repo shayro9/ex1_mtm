@@ -30,12 +30,14 @@ RLEListResult RLEListAppend(RLEList list, char value){
             return RLE_LIST_SUCCESS;
         }
         else {
-            list->next = malloc(sizeof(RLEList));
-            if (list->next == NULL) {
+            RLEList temp = malloc(sizeof(*temp));
+            if (temp == NULL) {
                 return RLE_LIST_OUT_OF_MEMORY;
             }
-            list->next->val = value;
-            list->next->len = NEW_LEN;
+            temp->val = value;
+            temp->len = NEW_LEN;
+            temp->next = NULL;
+            list->next = temp;
             return RLE_LIST_SUCCESS;
         }
     }
@@ -49,12 +51,16 @@ RLEListResult RLEListRemove(RLEList list, int index){
     if (index > RLEListSize(list)){
         return RLE_LIST_INDEX_OUT_OF_BOUNDS;
     }
-    if (index<= list ->len){
-        if ((list ->len) > NEW_LEN){
-            list ->len--;
+    int curr_node_len = list->len;
+    int next_node_len = list->next->len;
+    if (index < curr_node_len + next_node_len){
+        if (next_node_len > NEW_LEN){
+            list->next ->len--;
             return RLE_LIST_SUCCESS;
         }
-        free(list);
+        RLEList temp = list->next;
+        list->next = list->next->next;
+        free(temp);
         return RLE_LIST_SUCCESS;
     }
     return RLEListRemove (list ->next, index- (list ->len));
@@ -120,9 +126,9 @@ char RLEListGet(RLEList list, int index, RLEListResult *result)
         return 0;
     }
 
-    if(index <= list->len) {
+    if(index < list-> next->len + list->len) {
         UpdateResult(result,RLE_LIST_SUCCESS);
-        return list->val;
+        return list->next->val;
     }
     return RLEListGet(list->next,index - list->len,result);
 
