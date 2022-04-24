@@ -14,9 +14,9 @@ RLEList RLEListCreate(){
     if (list==NULL){
         return NULL;
     }
-    len =0;
-    val= 0;
-    next= NULL;
+    list ->len =0;
+    list ->val= 0;
+    list ->next= NULL;
     return list;
 }
 
