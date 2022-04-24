@@ -7,6 +7,18 @@ struct RLEList_t{
     struct RLEList_t* next;
 };
 
+static void UpdateResult(RLEListResult *result, RLEListResult val)
+{
+    if(result)
+        *result = val;
+}
+static int RLENodes(RLEList list)
+{
+    if(!list)
+        return 0;
+    return RLENodes(list->next) + 1;
+}
+
 void RLEListDestroy(RLEList list)
 {
     if(!list) {
@@ -30,15 +42,17 @@ int RLEListSize(RLEList list)
 char RLEListGet(RLEList list, int index, RLEListResult *result)
 {
     int size = RLEListSize(list);
-    if(!list)
-        *result = RLE_LIST_NULL_ARGUMENT;
-    if(index >= size)
-        *result = RLE_LIST_INDEX_OUT_OF_BOUNDS;
-    if(*result != RLE_LIST_SUCCESS)
+    if (!list) {
+        UpdateResult(result,RLE_LIST_NULL_ARGUMENT);
         return 0;
+    }
+    if (index >= size) {
+        UpdateResult(result, RLE_LIST_INDEX_OUT_OF_BOUNDS);
+        return 0;
+    }
 
     if(index <= list->len) {
-        *result = RLE_LIST_SUCCESS;
+        UpdateResult(result,RLE_LIST_SUCCESS);
         return list->val;
     }
     return RLEListGet(list->next,index - list->len,result);
@@ -48,15 +62,31 @@ char RLEListGet(RLEList list, int index, RLEListResult *result)
 char* RLEListExportToString(RLEList list, RLEListResult* result)
 {
     if(!list){
-        *result = RLE_LIST_NULL_ARGUMENT;
+        UpdateResult(result,RLE_LIST_NULL_ARGUMENT);
         return NULL;
     }
+
     int size = RLEListSize(list);
-    char* out = malloc(size-1);
-    for (int i = 0; i < size; ++i) {
-        char curr = RLEListGet(list,i,result);
-        out[i] = curr;
+    int nodes = RLENodes(list);
+    char* out = malloc(nodes * 3);
+    if(!out)
+    {
+        UpdateResult(result,RLE_LIST_ERROR);
+        return NULL;
     }
-    *result = RLE_LIST_SUCCESS;
+
+    int index = 0, out_index = 0;
+    while(index < size)
+    {
+        out[out_index] = list->val;
+        out[out_index + 1] = (char) list->len;
+        out[out_index + 2] = '\n';
+        index += list->len;
+        out_index += 3;
+        list = list->next;
+    }
+
+    UpdateResult(result,RLE_LIST_SUCCESS);
+
     return out;
 }
