@@ -57,7 +57,7 @@ RLEListResult RLEListRemove(RLEList list, int index){
         free(list);
         return RLE_LIST_SUCCESS;
     }
-    RLEListResult (list ->next, index- (list ->len));
+    RLEListRemove (list ->next, index- (list ->len));
 }
 
 RLEListResult RLEListMap(RLEList list, MapFunction map_function){
