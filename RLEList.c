@@ -39,7 +39,7 @@ RLEListResult RLEListAppend(RLEList list, char value){
             return RLE_LIST_SUCCESS;
         }
     }
-    RLEListAppend(list->next, value);
+    return RLEListAppend(list->next, value);
 }
 
 RLEListResult RLEListRemove(RLEList list, int index){
@@ -57,7 +57,7 @@ RLEListResult RLEListRemove(RLEList list, int index){
         free(list);
         return RLE_LIST_SUCCESS;
     }
-    RLEListRemove (list ->next, index- (list ->len));
+    return RLEListRemove (list ->next, index- (list ->len));
 }
 
 RLEListResult RLEListMap(RLEList list, MapFunction map_function){
@@ -71,7 +71,7 @@ RLEListResult RLEListMap(RLEList list, MapFunction map_function){
         return RLE_LIST_SUCCESS;
     }
     RLEListMap (list ->next, map_function);
-    list ->val == map_function(list ->val);
+    list ->val = map_function(list ->val);
     return RLE_LIST_SUCCESS;
 }
 
