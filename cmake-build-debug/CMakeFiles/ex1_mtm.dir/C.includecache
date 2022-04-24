@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../RLEList.h
+stdio.h
+-
+stdbool.h
+-
+
+C:/Users/shayr/Documents/GitHub/ex1_mtm/RLEList.c
+RLEList.h
+C:/Users/shayr/Documents/GitHub/ex1_mtm/RLEList.h
+stdlib.h
+C:/Users/shayr/Documents/GitHub/ex1_mtm/stdlib.h
+
+C:/Users/shayr/Documents/GitHub/ex1_mtm/RLEList.h
+stdio.h
+-
+stdbool.h
+-
+
+C:/Users/shayr/Documents/GitHub/ex1_mtm/tests/RLEList_example_test.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+RLEList.h
+C:/Users/shayr/Documents/GitHub/ex1_mtm/tests/RLEList.h
+test_utilities.h
+C:/Users/shayr/Documents/GitHub/ex1_mtm/tests/test_utilities.h
+
+C:/Users/shayr/Documents/GitHub/ex1_mtm/tests/test_utilities.h
+stdbool.h
+-
+stdio.h
+-
+
