@@ -67,11 +67,12 @@ RLEListResult RLEListMap(RLEList list, MapFunction map_function){
     if (list== NULL){
         return RLE_LIST_NULL_ARGUMENT;
     }
-    if (!list){
+    if ((list ->next)==NULL){
+        list ->next ->val = map_function(list ->next ->val);
         return RLE_LIST_SUCCESS;
     }
     RLEListMap (list ->next, map_function);
-    list ->val == map_function(list ->val);
+    list ->val = map_function(list ->val);
     return RLE_LIST_SUCCESS;
 }
 
