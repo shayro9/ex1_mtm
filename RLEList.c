@@ -1,4 +1,5 @@
 #include "RLEList.h"
+#include "stdlib.h"
 
 struct RLEList_t{
     int len;
@@ -6,4 +7,11 @@ struct RLEList_t{
     struct RLEList_t* next;
 };
 
-//implement the functions here
+void RLEListDestroy(RLEList list)
+{
+    if(!list) {
+        return;
+    }
+    RLEListDestroy(list->next);
+    free(list);
+}
