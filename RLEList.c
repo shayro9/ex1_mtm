@@ -1,11 +1,79 @@
 #include "RLEList.h"
-#include "stdlib.h"
+#include <stdlib.h>
+#define NEW_LEN 1
 
-struct RLEList_t{
+
+typedef struct RLEList_t {
     int len;
     char val;
     struct RLEList_t* next;
-};
+}*RLEList;
+
+RLEList RLEListCreate(){
+    RLEList list= malloc(sizeof(*list));
+    if (list==NULL){
+        return NULL;
+    }
+    len =0;
+    val= 0;
+    next= NULL;
+    return list;
+}
+
+RLEListResult RLEListAppend(RLEList list, char value){
+    if (list== NULL){
+        return RLE_LIST_NULL_ARGUMENT;
+    }
+    if (list ->next== NULL){
+        if (list ->val==value){
+            list ->len++;
+            return RLE_LIST_SUCCESS;
+        }
+        else {
+            list->next = malloc(sizeof(RLEList));
+            if (list->next == NULL) {
+                return RLE_LIST_OUT_OF_MEMORY;
+            }
+            list->next->val = value;
+            list->next->len = NEW_LEN;
+            return RLE_LIST_SUCCESS;
+        }
+    }
+    RLEListAppend(list->next, value);
+}
+
+RLEListResult RLEListRemove(RLEList list, int index){
+    if (list==NULL){
+        return RLE_LIST_NULL_ARGUMENT;
+    }
+    if (index > RLEListSize(list)){
+        return RLE_LIST_INDEX_OUT_OF_BOUNDS;
+    }
+    if (index<= list ->len){
+        if ((list ->len) > NEW_LEN){
+            len--;
+            return RLE_LIST_SUCCESS;
+        }
+        free(list);
+        return RLE_LIST_SUCCESS;
+    }
+    RLEListResult (list ->next, index- (list ->len));
+}
+
+RLEListResult RLEListMap(RLEList list, MapFunction map_function){
+    if (map_function== NULL){
+        return RLE_LIST_NULL_ARGUMENT;
+    }
+    if (list== NULL){
+        return RLE_LIST_NULL_ARGUMENT;
+    }
+    if (!list){
+        return RLE_LIST_SUCCESS;
+    }
+    RLEListMap (list ->next, map_function);
+    list ->val == map_function(val);
+    return RLE_LIST_SUCCESS;
+}
 
 static void UpdateResult(RLEListResult *result, RLEListResult val)
 {
