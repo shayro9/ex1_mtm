@@ -7,9 +7,7 @@ include_directories(.)
 include_directories(tests)
 
 add_executable(ex1_mtm
-        tests/test_utilities.h
-        tests/RLEListUnitTest.c
         RLEList.c
         RLEList.h
         AsciiArtTool.h
-        AsciiArtTool.c)
+        AsciiArtTool.c main.c)

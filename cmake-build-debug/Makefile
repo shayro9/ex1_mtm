@@ -166,29 +166,29 @@ RLEList.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex1_mtm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex1_mtm.dir\RLEList.c.s
 .PHONY : RLEList.c.s
 
-tests\RLEListUnitTest.obj: tests\RLEListUnitTest.c.obj
-.PHONY : tests\RLEListUnitTest.obj
+main.obj: main.c.obj
+.PHONY : main.obj
 
 # target to build an object file
-tests\RLEListUnitTest.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex1_mtm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.obj
-.PHONY : tests\RLEListUnitTest.c.obj
+main.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex1_mtm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex1_mtm.dir\main.c.obj
+.PHONY : main.c.obj
 
-tests\RLEListUnitTest.i: tests\RLEListUnitTest.c.i
-.PHONY : tests\RLEListUnitTest.i
+main.i: main.c.i
+.PHONY : main.i
 
 # target to preprocess a source file
-tests\RLEListUnitTest.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex1_mtm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.i
-.PHONY : tests\RLEListUnitTest.c.i
+main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex1_mtm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex1_mtm.dir\main.c.i
+.PHONY : main.c.i
 
-tests\RLEListUnitTest.s: tests\RLEListUnitTest.c.s
-.PHONY : tests\RLEListUnitTest.s
+main.s: main.c.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-tests\RLEListUnitTest.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex1_mtm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.s
-.PHONY : tests\RLEListUnitTest.c.s
+main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex1_mtm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex1_mtm.dir\main.c.s
+.PHONY : main.c.s
 
 # Help Target
 help:
@@ -205,9 +205,9 @@ help:
 	@echo ... RLEList.obj
 	@echo ... RLEList.i
 	@echo ... RLEList.s
-	@echo ... tests/RLEListUnitTest.obj
-	@echo ... tests/RLEListUnitTest.i
-	@echo ... tests/RLEListUnitTest.s
+	@echo ... main.obj
+	@echo ... main.i
+	@echo ... main.s
 .PHONY : help
 
 

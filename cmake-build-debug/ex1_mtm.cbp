@@ -96,10 +96,7 @@
 		<Unit filename="C:/Users/shayr/Documents/GitHub/ex1_mtm/RLEList.h">
 			<Option target="ex1_mtm"/>
 		</Unit>
-		<Unit filename="C:/Users/shayr/Documents/GitHub/ex1_mtm/tests/RLEListUnitTest.c">
-			<Option target="ex1_mtm"/>
-		</Unit>
-		<Unit filename="C:/Users/shayr/Documents/GitHub/ex1_mtm/tests/test_utilities.h">
+		<Unit filename="C:/Users/shayr/Documents/GitHub/ex1_mtm/main.c">
 			<Option target="ex1_mtm"/>
 		</Unit>
 		<Unit filename="C:/Users/shayr/Documents/GitHub/ex1_mtm/CMakeLists.txt">

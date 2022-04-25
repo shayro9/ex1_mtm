@@ -55,28 +55,9 @@ include CMakeFiles\ex1_mtm.dir\progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles\ex1_mtm.dir\flags.make
 
-CMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.obj: CMakeFiles\ex1_mtm.dir\flags.make
-CMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.obj: ..\tests\RLEListUnitTest.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\shayr\Documents\GitHub\ex1_mtm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/ex1_mtm.dir/tests/RLEListUnitTest.c.obj"
-	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1429~1.300\bin\Hostx86\x86\cl.exe @<<
- /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.obj /FdCMakeFiles\ex1_mtm.dir\ /FS -c C:\Users\shayr\Documents\GitHub\ex1_mtm\tests\RLEListUnitTest.c
-<<
-
-CMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ex1_mtm.dir/tests/RLEListUnitTest.c.i"
-	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1429~1.300\bin\Hostx86\x86\cl.exe > CMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.i @<<
- /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\shayr\Documents\GitHub\ex1_mtm\tests\RLEListUnitTest.c
-<<
-
-CMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ex1_mtm.dir/tests/RLEListUnitTest.c.s"
-	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1429~1.300\bin\Hostx86\x86\cl.exe @<<
- /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.s /c C:\Users\shayr\Documents\GitHub\ex1_mtm\tests\RLEListUnitTest.c
-<<
-
 CMakeFiles\ex1_mtm.dir\RLEList.c.obj: CMakeFiles\ex1_mtm.dir\flags.make
 CMakeFiles\ex1_mtm.dir\RLEList.c.obj: ..\RLEList.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\shayr\Documents\GitHub\ex1_mtm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/ex1_mtm.dir/RLEList.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\shayr\Documents\GitHub\ex1_mtm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/ex1_mtm.dir/RLEList.c.obj"
 	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1429~1.300\bin\Hostx86\x86\cl.exe @<<
  /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\ex1_mtm.dir\RLEList.c.obj /FdCMakeFiles\ex1_mtm.dir\ /FS -c C:\Users\shayr\Documents\GitHub\ex1_mtm\RLEList.c
 <<
@@ -95,7 +76,7 @@ CMakeFiles\ex1_mtm.dir\RLEList.c.s: cmake_force
 
 CMakeFiles\ex1_mtm.dir\AsciiArtTool.c.obj: CMakeFiles\ex1_mtm.dir\flags.make
 CMakeFiles\ex1_mtm.dir\AsciiArtTool.c.obj: ..\AsciiArtTool.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\shayr\Documents\GitHub\ex1_mtm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/ex1_mtm.dir/AsciiArtTool.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\shayr\Documents\GitHub\ex1_mtm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/ex1_mtm.dir/AsciiArtTool.c.obj"
 	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1429~1.300\bin\Hostx86\x86\cl.exe @<<
  /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\ex1_mtm.dir\AsciiArtTool.c.obj /FdCMakeFiles\ex1_mtm.dir\ /FS -c C:\Users\shayr\Documents\GitHub\ex1_mtm\AsciiArtTool.c
 <<
@@ -112,18 +93,37 @@ CMakeFiles\ex1_mtm.dir\AsciiArtTool.c.s: cmake_force
  /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\ex1_mtm.dir\AsciiArtTool.c.s /c C:\Users\shayr\Documents\GitHub\ex1_mtm\AsciiArtTool.c
 <<
 
+CMakeFiles\ex1_mtm.dir\main.c.obj: CMakeFiles\ex1_mtm.dir\flags.make
+CMakeFiles\ex1_mtm.dir\main.c.obj: ..\main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\shayr\Documents\GitHub\ex1_mtm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/ex1_mtm.dir/main.c.obj"
+	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1429~1.300\bin\Hostx86\x86\cl.exe @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\ex1_mtm.dir\main.c.obj /FdCMakeFiles\ex1_mtm.dir\ /FS -c C:\Users\shayr\Documents\GitHub\ex1_mtm\main.c
+<<
+
+CMakeFiles\ex1_mtm.dir\main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ex1_mtm.dir/main.c.i"
+	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1429~1.300\bin\Hostx86\x86\cl.exe > CMakeFiles\ex1_mtm.dir\main.c.i @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\shayr\Documents\GitHub\ex1_mtm\main.c
+<<
+
+CMakeFiles\ex1_mtm.dir\main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ex1_mtm.dir/main.c.s"
+	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1429~1.300\bin\Hostx86\x86\cl.exe @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\ex1_mtm.dir\main.c.s /c C:\Users\shayr\Documents\GitHub\ex1_mtm\main.c
+<<
+
 # Object files for target ex1_mtm
 ex1_mtm_OBJECTS = \
-"CMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.obj" \
 "CMakeFiles\ex1_mtm.dir\RLEList.c.obj" \
-"CMakeFiles\ex1_mtm.dir\AsciiArtTool.c.obj"
+"CMakeFiles\ex1_mtm.dir\AsciiArtTool.c.obj" \
+"CMakeFiles\ex1_mtm.dir\main.c.obj"
 
 # External object files for target ex1_mtm
 ex1_mtm_EXTERNAL_OBJECTS =
 
-ex1_mtm.exe: CMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.obj
 ex1_mtm.exe: CMakeFiles\ex1_mtm.dir\RLEList.c.obj
 ex1_mtm.exe: CMakeFiles\ex1_mtm.dir\AsciiArtTool.c.obj
+ex1_mtm.exe: CMakeFiles\ex1_mtm.dir\main.c.obj
 ex1_mtm.exe: CMakeFiles\ex1_mtm.dir\build.make
 ex1_mtm.exe: CMakeFiles\ex1_mtm.dir\objects1.rsp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\shayr\Documents\GitHub\ex1_mtm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable ex1_mtm.exe"

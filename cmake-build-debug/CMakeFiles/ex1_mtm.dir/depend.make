@@ -8,7 +8,7 @@ CMakeFiles\ex1_mtm.dir\AsciiArtTool.c.obj: ..\AsciiArtTool.h
 CMakeFiles\ex1_mtm.dir\RLEList.c.obj: ..\RLEList.c
 CMakeFiles\ex1_mtm.dir\RLEList.c.obj: ..\RLEList.h
 
-CMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.obj: ..\RLEList.h
-CMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.obj: ..\tests\RLEListUnitTest.c
-CMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.obj: ..\tests\test_utilities.h
+CMakeFiles\ex1_mtm.dir\main.c.obj: ..\AsciiArtTool.h
+CMakeFiles\ex1_mtm.dir\main.c.obj: ..\RLEList.h
+CMakeFiles\ex1_mtm.dir\main.c.obj: ..\main.c
 

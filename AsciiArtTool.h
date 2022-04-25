@@ -5,8 +5,6 @@
 #ifndef EX1_MTM_ASCIIARTTOOL_H
 #define EX1_MTM_ASCIIARTTOOL_H
 
-#endif //EX1_MTM_ASCIIARTTOOL_H
-
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
@@ -21,3 +19,5 @@ RLEListResult asciiArtPrint(RLEList list, FILE *out_stream);
 
 //asciiArtPrintEncoded prints the compressed asciiArt RLEList into the given file
 RLEListResult asciiArtPrintEncoded(RLEList list, FILE *out_stream);
+
+#endif //EX1_MTM_ASCIIARTTOOL_H

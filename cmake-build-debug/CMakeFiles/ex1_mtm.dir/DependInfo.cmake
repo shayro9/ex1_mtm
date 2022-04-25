@@ -10,7 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/shayr/Documents/GitHub/ex1_mtm/AsciiArtTool.c" "C:/Users/shayr/Documents/GitHub/ex1_mtm/cmake-build-debug/CMakeFiles/ex1_mtm.dir/AsciiArtTool.c.obj"
   "C:/Users/shayr/Documents/GitHub/ex1_mtm/RLEList.c" "C:/Users/shayr/Documents/GitHub/ex1_mtm/cmake-build-debug/CMakeFiles/ex1_mtm.dir/RLEList.c.obj"
-  "C:/Users/shayr/Documents/GitHub/ex1_mtm/tests/RLEListUnitTest.c" "C:/Users/shayr/Documents/GitHub/ex1_mtm/cmake-build-debug/CMakeFiles/ex1_mtm.dir/tests/RLEListUnitTest.c.obj"
+  "C:/Users/shayr/Documents/GitHub/ex1_mtm/main.c" "C:/Users/shayr/Documents/GitHub/ex1_mtm/cmake-build-debug/CMakeFiles/ex1_mtm.dir/main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "MSVC")
 
