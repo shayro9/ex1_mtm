@@ -1,5 +1,6 @@
 #include "RLEList.h"
 #include <stdlib.h>
+#include "string.h"
 #define NEW_LEN 1
 
 
@@ -48,7 +49,7 @@ RLEListResult RLEListRemove(RLEList list, int index){
     if (list==NULL){
         return RLE_LIST_NULL_ARGUMENT;
     }
-    if (index >= RLEListSize(list) || index < 0){
+    if ((!(list->next) && index >= list->len) || index < 0){
         return RLE_LIST_INDEX_OUT_OF_BOUNDS;
     }
     int curr_node_len = list->len;
@@ -92,6 +93,34 @@ static int RLENodes(RLEList list)
     if(!list)
         return 0;
     return RLENodes(list->next) + 1;
+}
+static char DigitToChar(int dig)
+{
+    return (char)('0' + dig);
+}
+static char* IntToString(int num)
+{
+    char* out = malloc(sizeof (char) * 2);
+    int index = 0;
+    while(num > 0)
+    {
+        if(index > 0)
+            realloc(out,sizeof (char) * (index+2));
+        out[index++] = DigitToChar(num%10);
+        out[index] = '\0';
+        num /= 10;
+    }
+    return out;
+}
+static char* ReverseString(char* str)
+{
+    int len = (int)strlen(str);
+    for (int i = 0; i < len / 2; ++i) {
+        char temp = str[i];
+        str[i] = str[len-(i+1)];
+        str[len - (i+1)] = temp;
+    }
+    return str;
 }
 
 void RLEListDestroy(RLEList list)
@@ -140,10 +169,12 @@ char* RLEListExportToString(RLEList list, RLEListResult* result)
         UpdateResult(result,RLE_LIST_NULL_ARGUMENT);
         return NULL;
     }
-
+    list = list->next;
     int size = RLEListSize(list);
     int nodes = RLENodes(list);
-    char* out = malloc(nodes * 3);
+    char* appearances = ReverseString(IntToString(list->len));
+    int appear_len = (int)strlen(appearances);
+    char* out = malloc(sizeof (char) *(3 + appear_len));
     if(!out)
     {
         UpdateResult(result,RLE_LIST_ERROR);
@@ -153,11 +184,14 @@ char* RLEListExportToString(RLEList list, RLEListResult* result)
     int index = 0, out_index = 0;
     while(index < size)
     {
-        out[out_index] = list->val;
-        out[out_index + 1] = (char) list->len;
-        out[out_index + 2] = '\n';
+        out[out_index++] = list->val;
+        for (int i = 0; i < appear_len; ++i) {
+            out[out_index++] = appearances[i];
+        }
+        out[out_index++] = '\n';
+        out[out_index] = '\0';
+
         index += list->len;
-        out_index += 3;
         list = list->next;
     }
 
