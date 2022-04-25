@@ -10,4 +10,6 @@ add_executable(ex1_mtm
         tests/test_utilities.h
         tests/RLEListUnitTest.c
         RLEList.c
-        RLEList.h AsciiArtTool.h AsciiArtTool.c)
+        RLEList.h
+        AsciiArtTool.h
+        AsciiArtTool.c)

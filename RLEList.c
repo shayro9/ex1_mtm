@@ -1,6 +1,7 @@
 #include "RLEList.h"
 #include <stdlib.h>
 #include "string.h"
+#include "math.h"
 #define NEW_LEN 1
 
 
@@ -9,6 +10,68 @@ typedef struct RLEList_t {
     char val;
     struct RLEList_t* next;
 }*RLEList;
+
+
+static void UpdateResult(RLEListResult *result, RLEListResult val)
+{
+    if(result)
+        *result = val;
+}
+static int RLENodes(RLEList list)
+{
+    if(!list)
+        return 0;
+    return RLENodes(list->next) + 1;
+}
+static char DigitToChar(int dig)
+{
+    return (char)('0' + dig);
+}
+static char* IntToString(int num)
+{
+    int temp_num = num;
+    int digits = 0;
+    while(temp_num > 0)
+    {
+        digits++;
+        temp_num /= 10;
+    }
+    char* out = malloc(sizeof (char) * (digits+1));
+    for (int i = 0; i < digits; ++i) {
+        int digit_index = (int)(pow(10,digits-1-i));
+        out[i] = DigitToChar(num/digit_index);
+        num %= digit_index;
+    }
+    out[digits] = '\0';
+    return out;
+}
+static char* ReverseString(char* str)
+{
+    int len = (int)strlen(str);
+    for (int i = 0; i < len / 2; ++i) {
+        char temp = str[i];
+        str[i] = str[len-(i+1)];
+        str[len - (i+1)] = temp;
+    }
+    return str;
+}
+static void AppearancesArray(RLEList list, int* array)
+{
+    int index = 0;
+    while (list)
+    {
+        if(list->len > 0)
+            array[index] = (int)strlen(IntToString(list->len));
+        list = list->next;
+        index++;
+    }
+}
+static void MergeAdjacentNodes(RLEList first_node, RLEList second_node)
+{
+    first_node->len += second_node->len;
+    first_node->next = second_node->next;
+    free(second_node);
+}
 
 RLEList RLEListCreate(){
     RLEList list= malloc(sizeof(*list));
@@ -60,7 +123,16 @@ RLEListResult RLEListRemove(RLEList list, int index){
             return RLE_LIST_SUCCESS;
         }
         RLEList temp = list->next;
-        list->next = list->next->next;
+        if(!temp->next)
+            list->next = NULL;
+        else
+        {
+            if(list->val == temp->next->val) {
+                MergeAdjacentNodes(list,temp->next);
+            }
+            else
+                list->next = list->next->next;
+        }
         free(temp);
         return RLE_LIST_SUCCESS;
     }
@@ -81,46 +153,6 @@ RLEListResult RLEListMap(RLEList list, MapFunction map_function){
     RLEListMap (list ->next, map_function);
     list ->val = map_function(list ->val);
     return RLE_LIST_SUCCESS;
-}
-
-static void UpdateResult(RLEListResult *result, RLEListResult val)
-{
-    if(result)
-        *result = val;
-}
-static int RLENodes(RLEList list)
-{
-    if(!list)
-        return 0;
-    return RLENodes(list->next) + 1;
-}
-static char DigitToChar(int dig)
-{
-    return (char)('0' + dig);
-}
-static char* IntToString(int num)
-{
-    char* out = malloc(sizeof (char) * 2);
-    int index = 0;
-    while(num > 0)
-    {
-        if(index > 0)
-            realloc(out,sizeof (char) * (index+2));
-        out[index++] = DigitToChar(num%10);
-        out[index] = '\0';
-        num /= 10;
-    }
-    return out;
-}
-static char* ReverseString(char* str)
-{
-    int len = (int)strlen(str);
-    for (int i = 0; i < len / 2; ++i) {
-        char temp = str[i];
-        str[i] = str[len-(i+1)];
-        str[len - (i+1)] = temp;
-    }
-    return str;
 }
 
 void RLEListDestroy(RLEList list)
@@ -169,32 +201,42 @@ char* RLEListExportToString(RLEList list, RLEListResult* result)
         UpdateResult(result,RLE_LIST_NULL_ARGUMENT);
         return NULL;
     }
-    list = list->next;
+
     int size = RLEListSize(list);
     int nodes = RLENodes(list);
-    char* appearances = ReverseString(IntToString(list->len));
-    int appear_len = (int)strlen(appearances);
-    char* out = malloc(sizeof (char) *(3 + appear_len));
+    int* appear_len = malloc(sizeof(int) * nodes);
+    for (int i = 0; i < nodes; ++i) {
+        appear_len[i] = 0;
+    }
+    AppearancesArray(list,appear_len);
+    int appear_len_sum = 0;
+    for (int i = 0; i < nodes; ++i) {
+        appear_len_sum += appear_len[i];
+    }
+
+    char* out = malloc(sizeof (char) *((nodes-1)*2 + appear_len_sum)+1);
     if(!out)
     {
         UpdateResult(result,RLE_LIST_ERROR);
         return NULL;
     }
 
-    int index = 0, out_index = 0;
+    int index = 0, out_index = 0, lines_index = 1;
     while(index < size)
     {
+        list = list->next;
+        char* appearances = IntToString(list->len);
         out[out_index++] = list->val;
-        for (int i = 0; i < appear_len; ++i) {
+        for (int i = 0; i < appear_len[lines_index]; ++i) {
             out[out_index++] = appearances[i];
         }
         out[out_index++] = '\n';
-        out[out_index] = '\0';
 
         index += list->len;
-        list = list->next;
+        lines_index++;
     }
-
+    out[out_index]='\0';
+    free(appear_len);
     UpdateResult(result,RLE_LIST_SUCCESS);
 
     return out;
