@@ -142,29 +142,29 @@ RLEList.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex1_mtm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex1_mtm.dir\RLEList.c.s
 .PHONY : RLEList.c.s
 
-tests\RLEList_example_test.obj: tests\RLEList_example_test.c.obj
-.PHONY : tests\RLEList_example_test.obj
+tests\RLEListUnitTest.obj: tests\RLEListUnitTest.c.obj
+.PHONY : tests\RLEListUnitTest.obj
 
 # target to build an object file
-tests\RLEList_example_test.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex1_mtm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex1_mtm.dir\tests\RLEList_example_test.c.obj
-.PHONY : tests\RLEList_example_test.c.obj
+tests\RLEListUnitTest.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex1_mtm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.obj
+.PHONY : tests\RLEListUnitTest.c.obj
 
-tests\RLEList_example_test.i: tests\RLEList_example_test.c.i
-.PHONY : tests\RLEList_example_test.i
+tests\RLEListUnitTest.i: tests\RLEListUnitTest.c.i
+.PHONY : tests\RLEListUnitTest.i
 
 # target to preprocess a source file
-tests\RLEList_example_test.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex1_mtm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex1_mtm.dir\tests\RLEList_example_test.c.i
-.PHONY : tests\RLEList_example_test.c.i
+tests\RLEListUnitTest.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex1_mtm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.i
+.PHONY : tests\RLEListUnitTest.c.i
 
-tests\RLEList_example_test.s: tests\RLEList_example_test.c.s
-.PHONY : tests\RLEList_example_test.s
+tests\RLEListUnitTest.s: tests\RLEListUnitTest.c.s
+.PHONY : tests\RLEListUnitTest.s
 
 # target to generate assembly for a file
-tests\RLEList_example_test.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex1_mtm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex1_mtm.dir\tests\RLEList_example_test.c.s
-.PHONY : tests\RLEList_example_test.c.s
+tests\RLEListUnitTest.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex1_mtm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.s
+.PHONY : tests\RLEListUnitTest.c.s
 
 # Help Target
 help:
@@ -178,9 +178,9 @@ help:
 	@echo ... RLEList.obj
 	@echo ... RLEList.i
 	@echo ... RLEList.s
-	@echo ... tests/RLEList_example_test.obj
-	@echo ... tests/RLEList_example_test.i
-	@echo ... tests/RLEList_example_test.s
+	@echo ... tests/RLEListUnitTest.obj
+	@echo ... tests/RLEListUnitTest.i
+	@echo ... tests/RLEListUnitTest.s
 .PHONY : help
 
 

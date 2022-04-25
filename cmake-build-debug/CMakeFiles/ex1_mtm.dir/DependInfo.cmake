@@ -9,7 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/shayr/Documents/GitHub/ex1_mtm/RLEList.c" "C:/Users/shayr/Documents/GitHub/ex1_mtm/cmake-build-debug/CMakeFiles/ex1_mtm.dir/RLEList.c.obj"
-  "C:/Users/shayr/Documents/GitHub/ex1_mtm/tests/RLEList_example_test.c" "C:/Users/shayr/Documents/GitHub/ex1_mtm/cmake-build-debug/CMakeFiles/ex1_mtm.dir/tests/RLEList_example_test.c.obj"
+  "C:/Users/shayr/Documents/GitHub/ex1_mtm/tests/RLEListUnitTest.c" "C:/Users/shayr/Documents/GitHub/ex1_mtm/cmake-build-debug/CMakeFiles/ex1_mtm.dir/tests/RLEListUnitTest.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "MSVC")
 

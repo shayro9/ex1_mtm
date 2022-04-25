@@ -48,7 +48,7 @@ RLEListResult RLEListRemove(RLEList list, int index){
     if (list==NULL){
         return RLE_LIST_NULL_ARGUMENT;
     }
-    if (index > RLEListSize(list)){
+    if (index >= RLEListSize(list) || index < 0){
         return RLE_LIST_INDEX_OUT_OF_BOUNDS;
     }
     int curr_node_len = list->len;
@@ -116,12 +116,12 @@ int RLEListSize(RLEList list)
 
 char RLEListGet(RLEList list, int index, RLEListResult *result)
 {
-    int size = RLEListSize(list);
     if (!list) {
         UpdateResult(result,RLE_LIST_NULL_ARGUMENT);
         return 0;
     }
-    if (index >= size) {
+
+    if((!list->next && index >= list->len) || index < 0) {
         UpdateResult(result, RLE_LIST_INDEX_OUT_OF_BOUNDS);
         return 0;
     }

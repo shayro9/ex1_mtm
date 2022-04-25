@@ -55,23 +55,23 @@ include CMakeFiles\ex1_mtm.dir\progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles\ex1_mtm.dir\flags.make
 
-CMakeFiles\ex1_mtm.dir\tests\RLEList_example_test.c.obj: CMakeFiles\ex1_mtm.dir\flags.make
-CMakeFiles\ex1_mtm.dir\tests\RLEList_example_test.c.obj: ..\tests\RLEList_example_test.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\shayr\Documents\GitHub\ex1_mtm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/ex1_mtm.dir/tests/RLEList_example_test.c.obj"
+CMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.obj: CMakeFiles\ex1_mtm.dir\flags.make
+CMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.obj: ..\tests\RLEListUnitTest.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\shayr\Documents\GitHub\ex1_mtm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/ex1_mtm.dir/tests/RLEListUnitTest.c.obj"
 	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1429~1.300\bin\Hostx86\x86\cl.exe @<<
- /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\ex1_mtm.dir\tests\RLEList_example_test.c.obj /FdCMakeFiles\ex1_mtm.dir\ /FS -c C:\Users\shayr\Documents\GitHub\ex1_mtm\tests\RLEList_example_test.c
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.obj /FdCMakeFiles\ex1_mtm.dir\ /FS -c C:\Users\shayr\Documents\GitHub\ex1_mtm\tests\RLEListUnitTest.c
 <<
 
-CMakeFiles\ex1_mtm.dir\tests\RLEList_example_test.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ex1_mtm.dir/tests/RLEList_example_test.c.i"
-	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1429~1.300\bin\Hostx86\x86\cl.exe > CMakeFiles\ex1_mtm.dir\tests\RLEList_example_test.c.i @<<
- /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\shayr\Documents\GitHub\ex1_mtm\tests\RLEList_example_test.c
+CMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ex1_mtm.dir/tests/RLEListUnitTest.c.i"
+	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1429~1.300\bin\Hostx86\x86\cl.exe > CMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.i @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\shayr\Documents\GitHub\ex1_mtm\tests\RLEListUnitTest.c
 <<
 
-CMakeFiles\ex1_mtm.dir\tests\RLEList_example_test.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ex1_mtm.dir/tests/RLEList_example_test.c.s"
+CMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ex1_mtm.dir/tests/RLEListUnitTest.c.s"
 	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1429~1.300\bin\Hostx86\x86\cl.exe @<<
- /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\ex1_mtm.dir\tests\RLEList_example_test.c.s /c C:\Users\shayr\Documents\GitHub\ex1_mtm\tests\RLEList_example_test.c
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.s /c C:\Users\shayr\Documents\GitHub\ex1_mtm\tests\RLEListUnitTest.c
 <<
 
 CMakeFiles\ex1_mtm.dir\RLEList.c.obj: CMakeFiles\ex1_mtm.dir\flags.make
@@ -95,13 +95,13 @@ CMakeFiles\ex1_mtm.dir\RLEList.c.s: cmake_force
 
 # Object files for target ex1_mtm
 ex1_mtm_OBJECTS = \
-"CMakeFiles\ex1_mtm.dir\tests\RLEList_example_test.c.obj" \
+"CMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.obj" \
 "CMakeFiles\ex1_mtm.dir\RLEList.c.obj"
 
 # External object files for target ex1_mtm
 ex1_mtm_EXTERNAL_OBJECTS =
 
-ex1_mtm.exe: CMakeFiles\ex1_mtm.dir\tests\RLEList_example_test.c.obj
+ex1_mtm.exe: CMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.obj
 ex1_mtm.exe: CMakeFiles\ex1_mtm.dir\RLEList.c.obj
 ex1_mtm.exe: CMakeFiles\ex1_mtm.dir\build.make
 ex1_mtm.exe: CMakeFiles\ex1_mtm.dir\objects1.rsp

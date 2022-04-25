@@ -4,7 +4,7 @@
 CMakeFiles\ex1_mtm.dir\RLEList.c.obj: ..\RLEList.c
 CMakeFiles\ex1_mtm.dir\RLEList.c.obj: ..\RLEList.h
 
-CMakeFiles\ex1_mtm.dir\tests\RLEList_example_test.c.obj: ..\RLEList.h
-CMakeFiles\ex1_mtm.dir\tests\RLEList_example_test.c.obj: ..\tests\RLEList_example_test.c
-CMakeFiles\ex1_mtm.dir\tests\RLEList_example_test.c.obj: ..\tests\test_utilities.h
+CMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.obj: ..\RLEList.h
+CMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.obj: ..\tests\RLEListUnitTest.c
+CMakeFiles\ex1_mtm.dir\tests\RLEListUnitTest.c.obj: ..\tests\test_utilities.h
 
