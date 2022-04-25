@@ -11,7 +11,7 @@ typedef struct RLEList_t {
     struct RLEList_t* next;
 }*RLEList;
 
-
+//--------------------STATIC FUNCTIONS--------------------------------
 static void UpdateResult(RLEListResult *result, RLEListResult val)
 {
     if(result)
@@ -45,16 +45,6 @@ static char* IntToString(int num)
     out[digits] = '\0';
     return out;
 }
-static char* ReverseString(char* str)
-{
-    int len = (int)strlen(str);
-    for (int i = 0; i < len / 2; ++i) {
-        char temp = str[i];
-        str[i] = str[len-(i+1)];
-        str[len - (i+1)] = temp;
-    }
-    return str;
-}
 static void AppearancesArray(RLEList list, int* array)
 {
     int index = 0;
@@ -73,29 +63,41 @@ static void MergeAdjacentNodes(RLEList first_node, RLEList second_node)
     free(second_node);
 }
 
-RLEList RLEListCreate(){
+//------------------RLEList Functions---------------------------------
+RLEList RLEListCreate()
+{
     RLEList list= malloc(sizeof(*list));
-    if (list==NULL){
+    if (!list){
         return NULL;
     }
-    list ->len =0;
-    list ->val= 0;
-    list ->next= NULL;
+    list->len = 0;
+    list->val = 0;
+    list->next = NULL;
     return list;
 }
 
-RLEListResult RLEListAppend(RLEList list, char value){
-    if (list== NULL){
+void RLEListDestroy(RLEList list)
+{
+    if(!list) {
+        return;
+    }
+    RLEListDestroy(list->next);
+    free(list);
+}
+
+RLEListResult RLEListAppend(RLEList list, char value)
+{
+    if (!list){
         return RLE_LIST_NULL_ARGUMENT;
     }
-    if (list ->next== NULL){
-        if (list ->val==value){
-            list ->len++;
+    if (!list->next){
+        if (list->val == value){
+            list->len++;
             return RLE_LIST_SUCCESS;
         }
         else {
             RLEList temp = malloc(sizeof(*temp));
-            if (temp == NULL) {
+            if (!temp) {
                 return RLE_LIST_OUT_OF_MEMORY;
             }
             temp->val = value;
@@ -108,18 +110,31 @@ RLEListResult RLEListAppend(RLEList list, char value){
     return RLEListAppend(list->next, value);
 }
 
-RLEListResult RLEListRemove(RLEList list, int index){
+int RLEListSize(RLEList list)
+{
+    if(!list){
+        return -1;
+    }
+    if(!list->next){
+        return list->len;
+    }
+    return list->len + RLEListSize(list->next);
+}
+
+RLEListResult RLEListRemove(RLEList list, int index)
+{
     if (list==NULL){
         return RLE_LIST_NULL_ARGUMENT;
     }
     if ((!(list->next) && index >= list->len) || index < 0){
         return RLE_LIST_INDEX_OUT_OF_BOUNDS;
     }
+
     int curr_node_len = list->len;
     int next_node_len = list->next->len;
     if (index < curr_node_len + next_node_len){
         if (next_node_len > NEW_LEN){
-            list->next ->len--;
+            list->next->len--;
             return RLE_LIST_SUCCESS;
         }
         RLEList temp = list->next;
@@ -136,43 +151,7 @@ RLEListResult RLEListRemove(RLEList list, int index){
         free(temp);
         return RLE_LIST_SUCCESS;
     }
-    return RLEListRemove (list ->next, index- (list ->len));
-}
-
-RLEListResult RLEListMap(RLEList list, MapFunction map_function){
-    if (map_function== NULL){
-        return RLE_LIST_NULL_ARGUMENT;
-    }
-    if (list== NULL){
-        return RLE_LIST_NULL_ARGUMENT;
-    }
-    if ((list ->next)==NULL){
-        list ->val = map_function(list ->val);
-        return RLE_LIST_SUCCESS;
-    }
-    RLEListMap (list ->next, map_function);
-    list ->val = map_function(list ->val);
-    return RLE_LIST_SUCCESS;
-}
-
-void RLEListDestroy(RLEList list)
-{
-    if(!list) {
-        return;
-    }
-    RLEListDestroy(list->next);
-    free(list);
-}
-
-int RLEListSize(RLEList list)
-{
-    if(!list){
-        return -1;
-    }
-    if(!list->next){
-        return list->len;
-    }
-    return list->len + RLEListSize(list->next);
+    return RLEListRemove (list->next, index - (list->len));
 }
 
 char RLEListGet(RLEList list, int index, RLEListResult *result)
@@ -187,7 +166,7 @@ char RLEListGet(RLEList list, int index, RLEListResult *result)
         return 0;
     }
 
-    if(index < list-> next->len + list->len) {
+    if(index < list->next->len + list->len) {
         UpdateResult(result,RLE_LIST_SUCCESS);
         return list->next->val;
     }
@@ -202,14 +181,12 @@ char* RLEListExportToString(RLEList list, RLEListResult* result)
         return NULL;
     }
 
-    int size = RLEListSize(list);
-    int nodes = RLENodes(list);
+    int nodes = RLENodes(list), appear_len_sum = 0;
     int* appear_len = malloc(sizeof(int) * nodes);
     for (int i = 0; i < nodes; ++i) {
         appear_len[i] = 0;
     }
     AppearancesArray(list,appear_len);
-    int appear_len_sum = 0;
     for (int i = 0; i < nodes; ++i) {
         appear_len_sum += appear_len[i];
     }
@@ -221,8 +198,8 @@ char* RLEListExportToString(RLEList list, RLEListResult* result)
         return NULL;
     }
 
-    int index = 0, out_index = 0, lines_index = 1;
-    while(index < size)
+    int out_index = 0, lines_index = 1;
+    while(list->next)
     {
         list = list->next;
         char* appearances = IntToString(list->len);
@@ -232,7 +209,6 @@ char* RLEListExportToString(RLEList list, RLEListResult* result)
         }
         out[out_index++] = '\n';
 
-        index += list->len;
         lines_index++;
     }
     out[out_index]='\0';
@@ -240,4 +216,20 @@ char* RLEListExportToString(RLEList list, RLEListResult* result)
     UpdateResult(result,RLE_LIST_SUCCESS);
 
     return out;
+}
+
+RLEListResult RLEListMap(RLEList list, MapFunction map_function){
+    if (!map_function){
+        return RLE_LIST_NULL_ARGUMENT;
+    }
+    if (!list){
+        return RLE_LIST_NULL_ARGUMENT;
+    }
+    if (!(list ->next)){
+        list->val = map_function(list->val);
+        return RLE_LIST_SUCCESS;
+    }
+    RLEListMap (list ->next, map_function);
+    list->val = map_function(list->val);
+    return RLE_LIST_SUCCESS;
 }
