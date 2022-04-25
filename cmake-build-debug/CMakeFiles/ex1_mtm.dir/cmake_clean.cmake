@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/ex1_mtm.dir/AsciiArtTool.c.obj"
+  "CMakeFiles/ex1_mtm.dir/AsciiArtTool.c.obj.d"
   "CMakeFiles/ex1_mtm.dir/RLEList.c.obj"
   "CMakeFiles/ex1_mtm.dir/RLEList.c.obj.d"
   "CMakeFiles/ex1_mtm.dir/tests/RLEListUnitTest.c.obj"

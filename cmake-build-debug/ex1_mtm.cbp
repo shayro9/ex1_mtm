@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/michalmaya/Documents/GitHub/ex1_mtm/AsciiArtTool.c">
+			<Option target="ex1_mtm"/>
+		</Unit>
+		<Unit filename="C:/Users/michalmaya/Documents/GitHub/ex1_mtm/AsciiArtTool.h">
+			<Option target="ex1_mtm"/>
+		</Unit>
 		<Unit filename="C:/Users/michalmaya/Documents/GitHub/ex1_mtm/RLEList.c">
 			<Option target="ex1_mtm"/>
 		</Unit>
