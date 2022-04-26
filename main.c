@@ -10,7 +10,7 @@ typedef struct RLEList_t {
     struct RLEList_t* next;
 }*RLEList;
 
-char map_function(char c)
+char map_function(char c) //turns a given characters from a ' ' to a '@' and the other way around.
 {
     if (c==' '){
         c= '@';
@@ -29,6 +29,7 @@ int main(int argc, char** argv)
     }
     FILE* target= fopen(argv[TARGET_ARG], "w");
     if (!target){
+        fclose(source);
         return 0;
     }
     RLEList list= asciiArtRead(source);
