@@ -23,8 +23,7 @@ RLEListResult asciiArtPrint(RLEList list, FILE *out_stream)
     RLEListResult result = RLE_LIST_SUCCESS;
     if(!list)
         return RLE_LIST_NULL_ARGUMENT;
-
-    char* temp = malloc(sizeof (char) * RLEListSize(list));
+    char* temp = malloc(sizeof (char) * (RLEListSize(list)+1));
     int index = 0;
     while (list->next && result == RLE_LIST_SUCCESS)
     {
@@ -34,6 +33,7 @@ RLEListResult asciiArtPrint(RLEList list, FILE *out_stream)
     temp[index]='\0';
     fputs(temp, out_stream);
     fclose(out_stream);
+    free (temp);
     return result;
 }
 

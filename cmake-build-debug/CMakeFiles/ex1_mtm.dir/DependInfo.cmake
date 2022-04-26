@@ -4,24 +4,13 @@ set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
 
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "C"
-  )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/shayr/Documents/GitHub/ex1_mtm/AsciiArtTool.c" "C:/Users/shayr/Documents/GitHub/ex1_mtm/cmake-build-debug/CMakeFiles/ex1_mtm.dir/AsciiArtTool.c.obj"
-  "C:/Users/shayr/Documents/GitHub/ex1_mtm/RLEList.c" "C:/Users/shayr/Documents/GitHub/ex1_mtm/cmake-build-debug/CMakeFiles/ex1_mtm.dir/RLEList.c.obj"
-  "C:/Users/shayr/Documents/GitHub/ex1_mtm/main.c" "C:/Users/shayr/Documents/GitHub/ex1_mtm/cmake-build-debug/CMakeFiles/ex1_mtm.dir/main.c.obj"
-  )
-set(CMAKE_C_COMPILER_ID "MSVC")
-
-# The include file search paths:
-set(CMAKE_C_TARGET_INCLUDE_PATH
-  "../."
-  "../tests"
   )
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/michalmaya/Documents/GitHub/ex1_mtm/AsciiArtTool.c" "CMakeFiles/ex1_mtm.dir/AsciiArtTool.c.obj" "gcc" "CMakeFiles/ex1_mtm.dir/AsciiArtTool.c.obj.d"
+  "C:/Users/michalmaya/Documents/GitHub/ex1_mtm/RLEList.c" "CMakeFiles/ex1_mtm.dir/RLEList.c.obj" "gcc" "CMakeFiles/ex1_mtm.dir/RLEList.c.obj.d"
+  "C:/Users/michalmaya/Documents/GitHub/ex1_mtm/main.c" "CMakeFiles/ex1_mtm.dir/main.c.obj" "gcc" "CMakeFiles/ex1_mtm.dir/main.c.obj.d"
   )
 
 # Targets to which this target links.
