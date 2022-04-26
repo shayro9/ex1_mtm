@@ -1,18 +1,45 @@
 #include "RLEList.h"
 #include "AsciiArtTool.h"
-//-----------!!!!!!!!FOR BASIC TESTING!!!!!!!----------------
-int main()
+#define FLAG_ARG 1
+#define SOURCE_ARG 2
+#define TARGET_ARG 3
+
+typedef struct RLEList_t {
+    int len;
+    char val;
+    struct RLEList_t* next;
+}*RLEList;
+
+char map_function(char c)
 {
-    FILE* file = fopen("../tests/dog.txt","r");
-    if(!file)
-    {
-        printf("XXX");
+    if (c==' '){
+        c= '@';
+    } else if(c=='@'){
+        c= ' ';
+    }
+    return c;
+}
+
+int main(int argc, char** argv)
+{
+    char* flag= argv[FLAG_ARG];
+    FILE* source= fopen(argv[SOURCE_ARG], "r");
+    if (!source){
         return 0;
     }
-    RLEList list = RLEListCreate();
-    list = asciiArtRead(file);
-    FILE* out = fopen("../tests/test.txt","w");
-    if(out)
-        asciiArtPrintEncoded(list,out);
+    FILE* target= fopen(argv[TARGET_ARG], "w");
+    if (!target){
+        return 0;
+    }
+    RLEList list= asciiArtRead(source);
+    if (flag[1]=='e'){
+        asciiArtPrintEncoded(list, target);
+    }
+    if (flag[1]== 'i'){
+        RLEListMap(list, map_function);
+        asciiArtPrint (list, target);
+    }
+    fclose(source);
+    fclose(target);
     return 0;
 }
