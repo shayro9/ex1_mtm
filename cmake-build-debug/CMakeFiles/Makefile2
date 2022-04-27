@@ -52,7 +52,7 @@ CMAKE_BINARY_DIR = C:\Users\shayr\Documents\GitHub\ex1_mtm\cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles\ex1_mtm.dir\all
+all: CMakeFiles\AsciiArtTool.dir\all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -60,34 +60,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles\ex1_mtm.dir\clean
+clean: CMakeFiles\AsciiArtTool.dir\clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/ex1_mtm.dir
+# Target rules for target CMakeFiles/AsciiArtTool.dir
 
 # All Build rule for target.
-CMakeFiles\ex1_mtm.dir\all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex1_mtm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex1_mtm.dir\depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex1_mtm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex1_mtm.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\shayr\Documents\GitHub\ex1_mtm\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4 "Built target ex1_mtm"
-.PHONY : CMakeFiles\ex1_mtm.dir\all
+CMakeFiles\AsciiArtTool.dir\all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AsciiArtTool.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AsciiArtTool.dir\depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AsciiArtTool.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AsciiArtTool.dir\build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\shayr\Documents\GitHub\ex1_mtm\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4 "Built target AsciiArtTool"
+.PHONY : CMakeFiles\AsciiArtTool.dir\all
 
 # Build rule for subdir invocation for target.
-CMakeFiles\ex1_mtm.dir\rule: cmake_check_build_system
+CMakeFiles\AsciiArtTool.dir\rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\shayr\Documents\GitHub\ex1_mtm\cmake-build-debug\CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) CMakeFiles\ex1_mtm.dir\all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) CMakeFiles\AsciiArtTool.dir\all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\shayr\Documents\GitHub\ex1_mtm\cmake-build-debug\CMakeFiles 0
-.PHONY : CMakeFiles\ex1_mtm.dir\rule
+.PHONY : CMakeFiles\AsciiArtTool.dir\rule
 
 # Convenience name for target.
-ex1_mtm: CMakeFiles\ex1_mtm.dir\rule
-.PHONY : ex1_mtm
+AsciiArtTool: CMakeFiles\AsciiArtTool.dir\rule
+.PHONY : AsciiArtTool
 
 # clean rule for target.
-CMakeFiles\ex1_mtm.dir\clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex1_mtm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex1_mtm.dir\clean
-.PHONY : CMakeFiles\ex1_mtm.dir\clean
+CMakeFiles\AsciiArtTool.dir\clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AsciiArtTool.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AsciiArtTool.dir\clean
+.PHONY : CMakeFiles\AsciiArtTool.dir\clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

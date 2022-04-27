@@ -74,56 +74,56 @@ CMakeFiles\ex1_mtm.dir\RLEList.c.s: cmake_force
  /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\ex1_mtm.dir\RLEList.c.s /c C:\Users\shayr\Documents\GitHub\ex1_mtm\RLEList.c
 <<
 
-CMakeFiles\ex1_mtm.dir\AsciiArtTool.c.obj: CMakeFiles\ex1_mtm.dir\flags.make
-CMakeFiles\ex1_mtm.dir\AsciiArtTool.c.obj: ..\AsciiArtTool.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\shayr\Documents\GitHub\ex1_mtm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/ex1_mtm.dir/AsciiArtTool.c.obj"
+CMakeFiles\ex1_mtm.dir\tool\AsciiArtTool.c.obj: CMakeFiles\ex1_mtm.dir\flags.make
+CMakeFiles\ex1_mtm.dir\tool\AsciiArtTool.c.obj: ..\tool\AsciiArtTool.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\shayr\Documents\GitHub\ex1_mtm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/ex1_mtm.dir/tool/AsciiArtTool.c.obj"
 	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1429~1.300\bin\Hostx86\x86\cl.exe @<<
- /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\ex1_mtm.dir\AsciiArtTool.c.obj /FdCMakeFiles\ex1_mtm.dir\ /FS -c C:\Users\shayr\Documents\GitHub\ex1_mtm\AsciiArtTool.c
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\ex1_mtm.dir\tool\AsciiArtTool.c.obj /FdCMakeFiles\ex1_mtm.dir\ /FS -c C:\Users\shayr\Documents\GitHub\ex1_mtm\tool\AsciiArtTool.c
 <<
 
-CMakeFiles\ex1_mtm.dir\AsciiArtTool.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ex1_mtm.dir/AsciiArtTool.c.i"
-	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1429~1.300\bin\Hostx86\x86\cl.exe > CMakeFiles\ex1_mtm.dir\AsciiArtTool.c.i @<<
- /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\shayr\Documents\GitHub\ex1_mtm\AsciiArtTool.c
+CMakeFiles\ex1_mtm.dir\tool\AsciiArtTool.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ex1_mtm.dir/tool/AsciiArtTool.c.i"
+	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1429~1.300\bin\Hostx86\x86\cl.exe > CMakeFiles\ex1_mtm.dir\tool\AsciiArtTool.c.i @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\shayr\Documents\GitHub\ex1_mtm\tool\AsciiArtTool.c
 <<
 
-CMakeFiles\ex1_mtm.dir\AsciiArtTool.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ex1_mtm.dir/AsciiArtTool.c.s"
+CMakeFiles\ex1_mtm.dir\tool\AsciiArtTool.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ex1_mtm.dir/tool/AsciiArtTool.c.s"
 	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1429~1.300\bin\Hostx86\x86\cl.exe @<<
- /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\ex1_mtm.dir\AsciiArtTool.c.s /c C:\Users\shayr\Documents\GitHub\ex1_mtm\AsciiArtTool.c
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\ex1_mtm.dir\tool\AsciiArtTool.c.s /c C:\Users\shayr\Documents\GitHub\ex1_mtm\tool\AsciiArtTool.c
 <<
 
-CMakeFiles\ex1_mtm.dir\main.c.obj: CMakeFiles\ex1_mtm.dir\flags.make
-CMakeFiles\ex1_mtm.dir\main.c.obj: ..\main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\shayr\Documents\GitHub\ex1_mtm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/ex1_mtm.dir/main.c.obj"
+CMakeFiles\ex1_mtm.dir\tool\main.c.obj: CMakeFiles\ex1_mtm.dir\flags.make
+CMakeFiles\ex1_mtm.dir\tool\main.c.obj: ..\tool\main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\shayr\Documents\GitHub\ex1_mtm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/ex1_mtm.dir/tool/main.c.obj"
 	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1429~1.300\bin\Hostx86\x86\cl.exe @<<
- /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\ex1_mtm.dir\main.c.obj /FdCMakeFiles\ex1_mtm.dir\ /FS -c C:\Users\shayr\Documents\GitHub\ex1_mtm\main.c
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\ex1_mtm.dir\tool\main.c.obj /FdCMakeFiles\ex1_mtm.dir\ /FS -c C:\Users\shayr\Documents\GitHub\ex1_mtm\tool\main.c
 <<
 
-CMakeFiles\ex1_mtm.dir\main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ex1_mtm.dir/main.c.i"
-	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1429~1.300\bin\Hostx86\x86\cl.exe > CMakeFiles\ex1_mtm.dir\main.c.i @<<
- /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\shayr\Documents\GitHub\ex1_mtm\main.c
+CMakeFiles\ex1_mtm.dir\tool\main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ex1_mtm.dir/tool/main.c.i"
+	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1429~1.300\bin\Hostx86\x86\cl.exe > CMakeFiles\ex1_mtm.dir\tool\main.c.i @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\shayr\Documents\GitHub\ex1_mtm\tool\main.c
 <<
 
-CMakeFiles\ex1_mtm.dir\main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ex1_mtm.dir/main.c.s"
+CMakeFiles\ex1_mtm.dir\tool\main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ex1_mtm.dir/tool/main.c.s"
 	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1429~1.300\bin\Hostx86\x86\cl.exe @<<
- /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\ex1_mtm.dir\main.c.s /c C:\Users\shayr\Documents\GitHub\ex1_mtm\main.c
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\ex1_mtm.dir\tool\main.c.s /c C:\Users\shayr\Documents\GitHub\ex1_mtm\tool\main.c
 <<
 
 # Object files for target ex1_mtm
 ex1_mtm_OBJECTS = \
 "CMakeFiles\ex1_mtm.dir\RLEList.c.obj" \
-"CMakeFiles\ex1_mtm.dir\AsciiArtTool.c.obj" \
-"CMakeFiles\ex1_mtm.dir\main.c.obj"
+"CMakeFiles\ex1_mtm.dir\tool\AsciiArtTool.c.obj" \
+"CMakeFiles\ex1_mtm.dir\tool\main.c.obj"
 
 # External object files for target ex1_mtm
 ex1_mtm_EXTERNAL_OBJECTS =
 
 ex1_mtm.exe: CMakeFiles\ex1_mtm.dir\RLEList.c.obj
-ex1_mtm.exe: CMakeFiles\ex1_mtm.dir\AsciiArtTool.c.obj
-ex1_mtm.exe: CMakeFiles\ex1_mtm.dir\main.c.obj
+ex1_mtm.exe: CMakeFiles\ex1_mtm.dir\tool\AsciiArtTool.c.obj
+ex1_mtm.exe: CMakeFiles\ex1_mtm.dir\tool\main.c.obj
 ex1_mtm.exe: CMakeFiles\ex1_mtm.dir\build.make
 ex1_mtm.exe: CMakeFiles\ex1_mtm.dir\objects1.rsp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\shayr\Documents\GitHub\ex1_mtm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable ex1_mtm.exe"

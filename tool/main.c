@@ -1,14 +1,13 @@
-#include "RLEList.h"
 #include "AsciiArtTool.h"
 #define FLAG_ARG 1
 #define SOURCE_ARG 2
 #define TARGET_ARG 3
 
-typedef struct RLEList_t {
+struct RLEList_t {
     int len;
     char val;
     struct RLEList_t* next;
-}*RLEList;
+};
 
 char map_function(char c) //turns a given characters from a ' ' to a '@' and the other way around.
 {
@@ -40,6 +39,7 @@ int main(int argc, char** argv)
         RLEListMap(list, map_function);
         asciiArtPrint (list, target);
     }
+    free(list);
     fclose(source);
     fclose(target);
     return 0;

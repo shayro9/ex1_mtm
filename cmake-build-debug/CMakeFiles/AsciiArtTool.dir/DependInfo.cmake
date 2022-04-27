@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/shayr/Documents/GitHub/ex1_mtm/RLEList.c" "C:/Users/shayr/Documents/GitHub/ex1_mtm/cmake-build-debug/CMakeFiles/ex1_mtm.dir/RLEList.c.obj"
-  "C:/Users/shayr/Documents/GitHub/ex1_mtm/tool/AsciiArtTool.c" "C:/Users/shayr/Documents/GitHub/ex1_mtm/cmake-build-debug/CMakeFiles/ex1_mtm.dir/tool/AsciiArtTool.c.obj"
-  "C:/Users/shayr/Documents/GitHub/ex1_mtm/tool/main.c" "C:/Users/shayr/Documents/GitHub/ex1_mtm/cmake-build-debug/CMakeFiles/ex1_mtm.dir/tool/main.c.obj"
+  "C:/Users/shayr/Documents/GitHub/ex1_mtm/RLEList.c" "C:/Users/shayr/Documents/GitHub/ex1_mtm/cmake-build-debug/CMakeFiles/AsciiArtTool.dir/RLEList.c.obj"
+  "C:/Users/shayr/Documents/GitHub/ex1_mtm/tool/AsciiArtTool.c" "C:/Users/shayr/Documents/GitHub/ex1_mtm/cmake-build-debug/CMakeFiles/AsciiArtTool.dir/tool/AsciiArtTool.c.obj"
+  "C:/Users/shayr/Documents/GitHub/ex1_mtm/tool/main.c" "C:/Users/shayr/Documents/GitHub/ex1_mtm/cmake-build-debug/CMakeFiles/AsciiArtTool.dir/tool/main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "MSVC")
 

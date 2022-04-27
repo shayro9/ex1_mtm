@@ -6,7 +6,17 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/shayr/Documents/GitHub/ex1_mtm/AsciiArtTool.h
+../RLEList.h
+stdio.h
+-
+stdbool.h
+-
+
+C:/Users/shayr/Documents/GitHub/ex1_mtm/tool/AsciiArtTool.c
+AsciiArtTool.h
+C:/Users/shayr/Documents/GitHub/ex1_mtm/tool/AsciiArtTool.h
+
+C:/Users/shayr/Documents/GitHub/ex1_mtm/tool/AsciiArtTool.h
 stdio.h
 -
 stdbool.h
@@ -18,15 +28,7 @@ string.h
 RLEList.h
 -
 
-C:/Users/shayr/Documents/GitHub/ex1_mtm/RLEList.h
-stdio.h
--
-stdbool.h
--
-
-C:/Users/shayr/Documents/GitHub/ex1_mtm/main.c
-RLEList.h
-C:/Users/shayr/Documents/GitHub/ex1_mtm/RLEList.h
+C:/Users/shayr/Documents/GitHub/ex1_mtm/tool/main.c
 AsciiArtTool.h
-C:/Users/shayr/Documents/GitHub/ex1_mtm/AsciiArtTool.h
+C:/Users/shayr/Documents/GitHub/ex1_mtm/tool/AsciiArtTool.h
 

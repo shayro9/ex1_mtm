@@ -106,48 +106,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ex1_mtm
+# Target rules for targets named AsciiArtTool
 
 # Build rule for target.
-ex1_mtm: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) ex1_mtm
-.PHONY : ex1_mtm
+AsciiArtTool: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) AsciiArtTool
+.PHONY : AsciiArtTool
 
 # fast build rule for target.
-ex1_mtm\fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex1_mtm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex1_mtm.dir\build
-.PHONY : ex1_mtm\fast
-
-AsciiArtTool.obj: AsciiArtTool.c.obj
-.PHONY : AsciiArtTool.obj
-
-# target to build an object file
-AsciiArtTool.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex1_mtm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex1_mtm.dir\AsciiArtTool.c.obj
-.PHONY : AsciiArtTool.c.obj
-
-AsciiArtTool.i: AsciiArtTool.c.i
-.PHONY : AsciiArtTool.i
-
-# target to preprocess a source file
-AsciiArtTool.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex1_mtm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex1_mtm.dir\AsciiArtTool.c.i
-.PHONY : AsciiArtTool.c.i
-
-AsciiArtTool.s: AsciiArtTool.c.s
-.PHONY : AsciiArtTool.s
-
-# target to generate assembly for a file
-AsciiArtTool.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex1_mtm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex1_mtm.dir\AsciiArtTool.c.s
-.PHONY : AsciiArtTool.c.s
+AsciiArtTool\fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AsciiArtTool.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AsciiArtTool.dir\build
+.PHONY : AsciiArtTool\fast
 
 RLEList.obj: RLEList.c.obj
 .PHONY : RLEList.obj
 
 # target to build an object file
 RLEList.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex1_mtm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex1_mtm.dir\RLEList.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AsciiArtTool.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AsciiArtTool.dir\RLEList.c.obj
 .PHONY : RLEList.c.obj
 
 RLEList.i: RLEList.c.i
@@ -155,7 +131,7 @@ RLEList.i: RLEList.c.i
 
 # target to preprocess a source file
 RLEList.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex1_mtm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex1_mtm.dir\RLEList.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AsciiArtTool.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AsciiArtTool.dir\RLEList.c.i
 .PHONY : RLEList.c.i
 
 RLEList.s: RLEList.c.s
@@ -163,32 +139,56 @@ RLEList.s: RLEList.c.s
 
 # target to generate assembly for a file
 RLEList.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex1_mtm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex1_mtm.dir\RLEList.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AsciiArtTool.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AsciiArtTool.dir\RLEList.c.s
 .PHONY : RLEList.c.s
 
-main.obj: main.c.obj
-.PHONY : main.obj
+tool\AsciiArtTool.obj: tool\AsciiArtTool.c.obj
+.PHONY : tool\AsciiArtTool.obj
 
 # target to build an object file
-main.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex1_mtm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex1_mtm.dir\main.c.obj
-.PHONY : main.c.obj
+tool\AsciiArtTool.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AsciiArtTool.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AsciiArtTool.dir\tool\AsciiArtTool.c.obj
+.PHONY : tool\AsciiArtTool.c.obj
 
-main.i: main.c.i
-.PHONY : main.i
+tool\AsciiArtTool.i: tool\AsciiArtTool.c.i
+.PHONY : tool\AsciiArtTool.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex1_mtm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex1_mtm.dir\main.c.i
-.PHONY : main.c.i
+tool\AsciiArtTool.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AsciiArtTool.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AsciiArtTool.dir\tool\AsciiArtTool.c.i
+.PHONY : tool\AsciiArtTool.c.i
 
-main.s: main.c.s
-.PHONY : main.s
+tool\AsciiArtTool.s: tool\AsciiArtTool.c.s
+.PHONY : tool\AsciiArtTool.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex1_mtm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex1_mtm.dir\main.c.s
-.PHONY : main.c.s
+tool\AsciiArtTool.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AsciiArtTool.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AsciiArtTool.dir\tool\AsciiArtTool.c.s
+.PHONY : tool\AsciiArtTool.c.s
+
+tool\main.obj: tool\main.c.obj
+.PHONY : tool\main.obj
+
+# target to build an object file
+tool\main.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AsciiArtTool.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AsciiArtTool.dir\tool\main.c.obj
+.PHONY : tool\main.c.obj
+
+tool\main.i: tool\main.c.i
+.PHONY : tool\main.i
+
+# target to preprocess a source file
+tool\main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AsciiArtTool.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AsciiArtTool.dir\tool\main.c.i
+.PHONY : tool\main.c.i
+
+tool\main.s: tool\main.c.s
+.PHONY : tool\main.s
+
+# target to generate assembly for a file
+tool\main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AsciiArtTool.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AsciiArtTool.dir\tool\main.c.s
+.PHONY : tool\main.c.s
 
 # Help Target
 help:
@@ -198,16 +198,16 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... ex1_mtm
-	@echo ... AsciiArtTool.obj
-	@echo ... AsciiArtTool.i
-	@echo ... AsciiArtTool.s
+	@echo ... AsciiArtTool
 	@echo ... RLEList.obj
 	@echo ... RLEList.i
 	@echo ... RLEList.s
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... tool/AsciiArtTool.obj
+	@echo ... tool/AsciiArtTool.i
+	@echo ... tool/AsciiArtTool.s
+	@echo ... tool/main.obj
+	@echo ... tool/main.i
+	@echo ... tool/main.s
 .PHONY : help
 
 
