@@ -32,11 +32,11 @@ int main(int argc, char** argv)
         fclose(source);
         return 0;
     }
-    RLEList list= asciiArtRead(source);
-    if (flag[1]=='e'){
+    RLEList list = asciiArtRead(source);
+    if (flag[1] =='e'){
         asciiArtPrintEncoded(list, target);
     }
-    if (flag[1]== 'i'){
+    if (flag[1] == 'i'){
         RLEListMap(list, map_function);
         asciiArtPrint (list, target);
     }

@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/shayr/Documents/GitHub/ex1_mtm/AsciiArtTool.h
+stdio.h
+-
+stdbool.h
+-
+stdlib.h
+-
+string.h
+-
+RLEList.h
+-
+
+C:/Users/shayr/Documents/GitHub/ex1_mtm/RLEList.h
+stdio.h
+-
+stdbool.h
+-
+
+C:/Users/shayr/Documents/GitHub/ex1_mtm/main.c
+RLEList.h
+C:/Users/shayr/Documents/GitHub/ex1_mtm/RLEList.h
+AsciiArtTool.h
+C:/Users/shayr/Documents/GitHub/ex1_mtm/AsciiArtTool.h
+
