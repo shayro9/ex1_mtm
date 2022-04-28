@@ -1,21 +1,29 @@
 #include "RLEList.h"
 #include <stdlib.h>
 #include "string.h"
-#include "math.h"
 #define NEW_LEN 1
 
 
-typedef struct RLEList_t {
+struct RLEList_t {
     int len;
     char val;
     struct RLEList_t* next;
-}*RLEList;
+};
 
 //--------------------STATIC FUNCTIONS--------------------------------
 static void UpdateResult(RLEListResult *result, RLEListResult val)
 {
     if(result)
         *result = val;
+}
+static int Pow(int base, int power)
+{
+    if(power == 0)
+        return 1;
+    for (int i = 1; i < power; ++i) {
+        base *= base;
+    }
+    return base;
 }
 static int RLENodes(RLEList list)
 {
@@ -38,7 +46,7 @@ static char* IntToString(int num)
     }
     char* out = malloc(sizeof (char) * (digits+1));
     for (int i = 0; i < digits; ++i) {
-        int digit_index = (int)(pow(10,digits-1-i));
+        int digit_index = Pow(10,digits-1-i);
         out[i] = DigitToChar(num/digit_index);
         num %= digit_index;
     }

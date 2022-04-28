@@ -1,20 +1,22 @@
 #include "AsciiArtTool.h"
 
-typedef struct RLEList_t {
+struct RLEList_t {
     int len;
     char val;
     struct RLEList_t* next;
-}*RLEList;
+};
 
 RLEList asciiArtRead(FILE* in_stream){
     RLEList out = RLEListCreate();
-    char* read = fgets("",2,in_stream);
+    char* input = malloc(sizeof (char)*2);
+    char* read = fgets(input,2,in_stream);
     while (read != NULL)
     {
         RLEListAppend(out,read[0]);
-        read = fgets("",2,in_stream);
+        read = fgets(input,2,in_stream);
     }
-    fclose(in_stream);
+    free(input);
+    free(read);
     return out;
 }
 
@@ -32,7 +34,6 @@ RLEListResult asciiArtPrint(RLEList list, FILE *out_stream)
     }
     temp[index]='\0';
     fputs(temp, out_stream);
-    fclose(out_stream);
     free (temp);
     return result;
 }
@@ -46,6 +47,5 @@ RLEListResult asciiArtPrintEncoded(RLEList list, FILE *out_stream)
     }
     char* out = RLEListExportToString(list, &result);
     fputs(out, out_stream);
-    fclose(out_stream);
     return result;
 }

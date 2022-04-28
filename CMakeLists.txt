@@ -6,8 +6,8 @@ set(CMAKE_C_STANDARD 11)
 include_directories(.)
 include_directories(tests)
 
-add_executable(ex1_mtm
+add_executable(AsciiArtTool
         RLEList.c
         RLEList.h
-        AsciiArtTool.h
-        AsciiArtTool.c main.c)
+        tool/AsciiArtTool.h
+        tool/AsciiArtTool.c tool/main.c)
