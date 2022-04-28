@@ -10,4 +10,5 @@ add_executable(AsciiArtTool
         RLEList.c
         RLEList.h
         tool/AsciiArtTool.h
-        tool/AsciiArtTool.c tool/main.c)
+        tool/AsciiArtTool.c
+        tool/main.c)

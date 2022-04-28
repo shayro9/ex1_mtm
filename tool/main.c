@@ -9,7 +9,7 @@ struct RLEList_t {
     struct RLEList_t* next;
 };
 
-char map_function(char c) //turns a given characters from a ' ' to a '@' and the other way around.
+char mapFunction(char c) //turns a given characters from a ' ' to a '@' and the other way around.
 {
     if (c==' '){
         c= '@';
@@ -36,10 +36,10 @@ int main(int argc, char** argv)
         asciiArtPrintEncoded(list, target);
     }
     if (flag[1] == 'i'){
-        RLEListMap(list, map_function);
+        RLEListMap(list, mapFunction);
         asciiArtPrint (list, target);
     }
-    free(list);
+    RLEListDestroy(list);
     fclose(source);
     fclose(target);
     return 0;
