@@ -10,20 +10,29 @@ struct RLEList_t {
     struct RLEList_t* next;
 };
 
+
 //--------------------STATIC FUNCTIONS--------------------------------
-static void UpdateResult(RLEListResult *result, RLEListResult val)
+static void updateResult(RLEListResult *result, RLEListResult val);
+static int calcPower(int base, int power);
+static int RLENodes(RLEList list);
+static char digitToChar(int dig);
+static char* intToString(int num);
+static int appearancesArray(RLEList list, int* array);
+static void mergeAdjacentNodes(RLEList first_node, RLEList second_node);
+
+//-------------------STATIC IMPLEMENTATION---------------------------
+static void updateResult(RLEListResult *result, RLEListResult val)
 {
     if(result)
         *result = val;
 }
-static int Pow(int base, int power)
+static int calcPower(int base, int power)
 {
-    if(power == 0)
-        return 1;
-    for (int i = 1; i < power; ++i) {
-        base *= base;
+    int out = 1;
+    for (int i = 0; i < power; ++i) {
+        out *= base;
     }
-    return base;
+    return out;
 }
 static int RLENodes(RLEList list)
 {
@@ -31,44 +40,48 @@ static int RLENodes(RLEList list)
         return 0;
     return RLENodes(list->next) + 1;
 }
-static char DigitToChar(int dig)
+static char digitToChar(int dig)
 {
     return (char)('0' + dig);
 }
-static char* IntToString(int num)
+static char* intToString(int num)
 {
-    int temp_num = num;
+    int tempNum = num;
     int digits = 0;
-    while(temp_num > 0)
+    while(tempNum > 0)
     {
         digits++;
-        temp_num /= 10;
+        tempNum /= 10;
     }
     char* out = malloc(sizeof (char) * (digits+1));
     for (int i = 0; i < digits; ++i) {
-        int digit_index = Pow(10,digits-1-i);
-        out[i] = DigitToChar(num/digit_index);
+        int digit_index = calcPower(10,digits-1-i);
+        out[i] = digitToChar(num/digit_index);
         num %= digit_index;
     }
     out[digits] = '\0';
     return out;
 }
-static void AppearancesArray(RLEList list, int* array)
+static int appearancesArray(RLEList list, int* array)
 {
-    int index = 0;
+    int index = 0, sum = 0;
     while (list)
     {
         if(list->len > 0)
-            array[index] = (int)strlen(IntToString(list->len));
+            array[index] = (int)strlen(intToString(list->len));
+        else
+            array[index] = 0;
+        sum += array[index];
         list = list->next;
         index++;
     }
+    return sum;
 }
-static void MergeAdjacentNodes(RLEList first_node, RLEList second_node)
+static void mergeAdjacentNodes(RLEList firstNode, RLEList secondNode)
 {
-    first_node->len += second_node->len;
-    first_node->next = second_node->next;
-    free(second_node);
+    firstNode->len += secondNode->len;
+    firstNode->next = secondNode->next;
+    free(secondNode);
 }
 
 //------------------RLEList Functions---------------------------------
@@ -138,10 +151,10 @@ RLEListResult RLEListRemove(RLEList list, int index)
         return RLE_LIST_INDEX_OUT_OF_BOUNDS;
     }
 
-    int curr_node_len = list->len;
-    int next_node_len = list->next->len;
-    if (index < curr_node_len + next_node_len){
-        if (next_node_len > NEW_LEN){
+    int currNodeLen = list->len;
+    int nextNodeLen = list->next->len;
+    if (index < currNodeLen + nextNodeLen){
+        if (nextNodeLen > NEW_LEN){
             list->next->len--;
             return RLE_LIST_SUCCESS;
         }
@@ -151,7 +164,7 @@ RLEListResult RLEListRemove(RLEList list, int index)
         else
         {
             if(list->val == temp->next->val) {
-                MergeAdjacentNodes(list,temp->next);
+                mergeAdjacentNodes(list,temp->next);
             }
             else
                 list->next = list->next->next;
@@ -165,17 +178,17 @@ RLEListResult RLEListRemove(RLEList list, int index)
 char RLEListGet(RLEList list, int index, RLEListResult *result)
 {
     if (!list) {
-        UpdateResult(result,RLE_LIST_NULL_ARGUMENT);
+        updateResult(result,RLE_LIST_NULL_ARGUMENT);
         return 0;
     }
 
     if((!list->next && index >= list->len) || index < 0) {
-        UpdateResult(result, RLE_LIST_INDEX_OUT_OF_BOUNDS);
+        updateResult(result, RLE_LIST_INDEX_OUT_OF_BOUNDS);
         return 0;
     }
 
     if(index < list->next->len + list->len) {
-        UpdateResult(result,RLE_LIST_SUCCESS);
+        updateResult(result,RLE_LIST_SUCCESS);
         return list->next->val;
     }
     return RLEListGet(list->next,index - list->len,result);
@@ -185,59 +198,53 @@ char RLEListGet(RLEList list, int index, RLEListResult *result)
 char* RLEListExportToString(RLEList list, RLEListResult* result)
 {
     if(!list){
-        UpdateResult(result,RLE_LIST_NULL_ARGUMENT);
+        updateResult(result,RLE_LIST_NULL_ARGUMENT);
         return NULL;
     }
 
-    int nodes = RLENodes(list), appear_len_sum = 0;
-    int* appear_len = malloc(sizeof(int) * nodes);
-    for (int i = 0; i < nodes; ++i) {
-        appear_len[i] = 0;
-    }
-    AppearancesArray(list,appear_len);
-    for (int i = 0; i < nodes; ++i) {
-        appear_len_sum += appear_len[i];
-    }
+    int nodes = RLENodes(list), appearLenSum;
+    int* appearLen = malloc(sizeof(int) * nodes);
+    appearLenSum = appearancesArray(list,appearLen);
 
-    char* out = malloc(sizeof (char) *((nodes-1)*2 + appear_len_sum)+1);
+    char* out = malloc(sizeof (char) *((nodes-1)*2 + appearLenSum)+1);
     if(!out)
     {
-        UpdateResult(result,RLE_LIST_ERROR);
+        updateResult(result,RLE_LIST_ERROR);
         return NULL;
     }
 
-    int out_index = 0, lines_index = 1;
+    int outIndex = 0, linesIndex = 1;
     while(list->next)
     {
         list = list->next;
-        char* appearances = IntToString(list->len);
-        out[out_index++] = list->val;
-        for (int i = 0; i < appear_len[lines_index]; ++i) {
-            out[out_index++] = appearances[i];
+        char* appearances = intToString(list->len);
+        out[outIndex++] = list->val;
+        for (int i = 0; i < appearLen[linesIndex]; ++i) {
+            out[outIndex++] = appearances[i];
         }
-        out[out_index++] = '\n';
+        out[outIndex++] = '\n';
 
-        lines_index++;
+        linesIndex++;
     }
-    out[out_index]='\0';
-    free(appear_len);
-    UpdateResult(result,RLE_LIST_SUCCESS);
+    out[outIndex]='\0';
+    free(appearLen);
+    updateResult(result,RLE_LIST_SUCCESS);
 
     return out;
 }
 
-RLEListResult RLEListMap(RLEList list, MapFunction map_function){
-    if (!map_function){
+RLEListResult RLEListMap(RLEList list, MapFunction mapFunction){
+    if (!mapFunction){
         return RLE_LIST_NULL_ARGUMENT;
     }
     if (!list){
         return RLE_LIST_NULL_ARGUMENT;
     }
     if (!(list ->next)){
-        list->val = map_function(list->val);
+        list->val = mapFunction(list->val);
         return RLE_LIST_SUCCESS;
     }
-    RLEListMap (list ->next, map_function);
-    list->val = map_function(list->val);
+    RLEListMap (list ->next, mapFunction);
+    list->val = mapFunction(list->val);
     return RLE_LIST_SUCCESS;
 }
